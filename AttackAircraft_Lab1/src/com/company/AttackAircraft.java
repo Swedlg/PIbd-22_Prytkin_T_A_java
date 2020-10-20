@@ -1,46 +1,59 @@
 package com.company;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
 
 public class AttackAircraft  {
 
-
+    //Начальная координата X
     private int startPosX;
 
+    //Начальная координата Y
     private int startPosY;
 
+    //Ширина окна
     private int pictureWidth;
 
+    //Высота окна
     private int pictureHeight;
 
+    //Максимальная скорость самолета
     public int maxSpeed;
 
+    //Максимальный вес самолета
     public float weight;
 
+    //Цвета
     public Color mainColor;
     public Color DopColor;
     public Color DopColor2;
     public Color DopColor3;
 
+    //Наличие пропеллера
     public boolean propeller;
 
+    //Наличие шасси
     public boolean chassis;
 
+    //Наличие атнены
     public boolean antenna;
 
+    //Наличие камуфляжа
     public boolean camouflage;
 
+    //Наличие ракет
     public boolean rockets;
 
+    //Наличие бомб
     public boolean bombs;
 
-    public AttackAircraft(int maxSpeed, float weight, Color mainColor, Color dopColor, Color dopColor2, Color dopColor3, boolean propeller, boolean chassis, boolean antenna, boolean rockets, boolean bombs)
+    //Количесвто ракет и бомб
+    public int countOfCannonsAndBombs;
+
+    //Экземпляр класс ракет и бомб
+    CannonsAndBombs cannonsAndBombs;
+
+    public AttackAircraft(int maxSpeed, float weight, Color mainColor, Color dopColor, Color dopColor2, Color dopColor3, boolean propeller, boolean chassis, boolean antenna, boolean rockets, boolean bombs, int countOfCannonsAndBombs)
     {
-        System.out.println("AtackAircraft");
         this.maxSpeed = maxSpeed;
         this.weight = weight;
         this.mainColor = mainColor;
@@ -52,102 +65,109 @@ public class AttackAircraft  {
         this.antenna = antenna;
         this.rockets = rockets;
         this.bombs = bombs;
-
         camouflage = rockets || bombs;
+        
+        if (camouflage){
+            this.countOfCannonsAndBombs = countOfCannonsAndBombs;
+            cannonsAndBombs = new CannonsAndBombs(countOfCannonsAndBombs);
+        }
     }
 
+    /**
+     * Установить количесвто ракет и бомб
+     * @param countOfCannonsAndBombs Количество ракет и бомб
+     */
+    public void setCountOfCannonsAndBombs(int countOfCannonsAndBombs) {
+
+        System.out.println("Устанавливается количество ракет и бомб: " + countOfCannonsAndBombs);
+
+        if (camouflage){
+            this.countOfCannonsAndBombs = countOfCannonsAndBombs;
+            cannonsAndBombs = new CannonsAndBombs(countOfCannonsAndBombs);
+        }
+        else {
+            System.out.println("Не удалось установить ракеты и бомбы! Самолет пассажирский!");
+        }
+    }
+
+    /**
+     * Метод установки начальной позиции самолета
+     * @param x координата X
+     * @param y координата Y
+     * @param width ширина окна
+     * @param height высота окна
+     */
     public void SetPosition(int x, int y, int width, int height)
     {
-        System.out.println("SetPosition");
         startPosX = x;
         startPosY = y;
         pictureWidth = width;
         pictureHeight = height;
     }
 
+    /**
+     * Метод передвижения транспорта
+     * @param direction Направление переджвиженния
+     */
     public void MoveTransport(Directions direction)
     {
-        System.out.println("MoveTransport");
-
-        System.out.println(startPosX + " " + startPosY);
-
         try {
-            int leftbody = 0;//выступ левой части
-            int topbudy = 100;//выступ основной части корабля
+
+            //выступ левой части
+            int leftLedge = 0;
+
+            //выступ основной части корабля
+            int topLedge = 100;
+
+            //Дискретный шан перемещения самолета
             float step = maxSpeed * 100 / weight;
-            int atackAircraftWidth = 200;
-            int atackAircraftHeight = 100;
+
+            //Ширина самолета
+            int attackAircraftWidth = 200;
+
+            //Высота самолета
+            int attackAircraftHeight = 100;
+
             switch (direction) {
                 case Right:
-                    if (startPosX + step < pictureWidth - atackAircraftWidth) {
+                    if (startPosX + step < pictureWidth - attackAircraftWidth) {
                         startPosX += step;
                     }
                     break;
                 case Left:
-                    if (startPosX - step > leftbody) {
+                    if (startPosX - step > leftLedge) {
                         startPosX -= step;
                     }
                     break;
                 case Up:
-                    if (startPosY - step > topbudy) {
+                    if (startPosY - step > topLedge) {
                         startPosY -= step;
                     }
                     break;
                 case Down:
-                    if (startPosY + step < pictureHeight - atackAircraftHeight) {
+                    if (startPosY + step < pictureHeight - attackAircraftHeight) {
                         startPosY += step;
                     }
                     break;
             }
         }
         catch (Exception ignored){}
-
-        System.out.println(startPosX + " " +  startPosY);
     }
 
-    public void drawTransport(Graphics g) throws IOException {
+    /**
+     * Метод отрисовка самолета
+     * @param g Полотно отрисовки
+     */
+    public void drawTransport(Graphics g) {
 
-
-
-        //startPosX += 10;
-        //startPosY += 10;
-
-        //Pen pen = new Pen(MainColor);
-        //Brush brush;
         if (camouflage)
         {
             g.setColor(mainColor);
-            //brush = new SolidBrush(mainColor);
         }
         else
         {
             g.setColor(DopColor3);
-            //brush = new SolidBrush(DopColor3);
         }
-
-        //pen.Width = 16;
-
-
-        /*самолет
-        Point point1 = new Point((int)startPosX + 100, (int)startPosY - 100);
-        Point point2 = new Point((int)startPosX + 110, (int)startPosY - 75);
-        Point point3 = new Point((int)startPosX + 110, (int)startPosY - 10);
-        Point point4 = new Point((int)startPosX + 200, (int)startPosY + 25);
-        Point point5 = new Point((int)startPosX + 200, (int)startPosY + 50);
-        Point point6 = new Point((int)startPosX + 110, (int)startPosY + 50);
-        Point point7 = new Point((int)startPosX + 110, (int)startPosY + 75);
-        Point point8 = new Point((int)startPosX + 125, (int)startPosY + 100);
-        Point point9 = new Point((int)startPosX + 110, (int)startPosY + 100);
-        Point point10 = new Point((int)startPosX + 100, (int)startPosY + 110);//
-        Point point11 = new Point((int)startPosX + 90, (int)startPosY + 100);
-        Point point12 = new Point((int)startPosX + 75, (int)startPosY + 100);
-        Point point13 = new Point((int)startPosX + 90, (int)startPosY + 75);
-        Point point14 = new Point((int)startPosX + 90, (int)startPosY + 50);
-        Point point15 = new Point((int)startPosX, (int)startPosY + 50);
-        Point point16 = new Point((int)startPosX, (int)startPosY + 25);
-        Point point17 = new Point((int)startPosX + 90, (int)startPosY - 10);
-        Point point18 = new Point((int)startPosX + 90, (int)startPosY - 75);
-         */
 
         int[] x = {startPosX + 100, startPosX + 110, startPosX + 110, startPosX + 200, startPosX + 200, startPosX + 110, startPosX + 110, startPosX + 125,
                 startPosX + 110, startPosX + 100, startPosX + 90, startPosX + 75, startPosX + 90, startPosX + 90, startPosX, startPosX, startPosX + 90, startPosX + 90};
@@ -162,8 +182,6 @@ public class AttackAircraft  {
         if (propeller)
         {
             g.setColor(DopColor2);
-            //pen = new Pen(DopColor2);
-            //pen.Width = 3;
             g2.setStroke(new BasicStroke(3));
             g2.drawLine(startPosX + 85, startPosY - 95, startPosX + 115, startPosY - 95);
 
@@ -171,8 +189,6 @@ public class AttackAircraft  {
         if (chassis)
         {
             g.setColor(DopColor2);
-            //pen = new Pen(DopColor2);
-            //pen.width = 3;
             g2.setStroke(new BasicStroke(3));
             g2.drawLine(startPosX + 100, startPosY - 75, startPosX + 100, startPosY - 50);
             g.drawOval(startPosX + 97, startPosY - 65, 6, 6);
@@ -184,33 +200,11 @@ public class AttackAircraft  {
         if (antenna)
         {
             g.setColor(DopColor2);
-            //pen = new Pen(DopColor2);
-            //pen.Width = 3;
             g2.setStroke(new BasicStroke(3));
             g2.drawLine(startPosX + 100, startPosY + 95, startPosX + 100, startPosY + 120);
         }
-        if (rockets)
-        {
-            g.setColor(DopColor);
-            //pen = new Pen(DopColor);
-            //pen.Width = 5;
-            g2.setStroke(new BasicStroke(5));
-
-            g2.drawLine(startPosX + 25, startPosY + 10, startPosX + 25, startPosY + 35);
-            g2.drawLine(startPosX + 50, startPosY, startPosX + 50, startPosY + 25);
-            g2.drawLine(startPosX + 75, startPosY - 10, startPosX + 75, startPosY + 15);
-
-            g2.drawLine(startPosX + 125, startPosY - 10, startPosX + 125, startPosY + 15);
-            g2.drawLine(startPosX + 150, startPosY, startPosX + 150, startPosY + 25);
-            g2.drawLine(startPosX + 175, startPosY + 10, startPosX + 175, startPosY + 35);
-
-        }
-        if (bombs)
-        {
-            g.setColor(DopColor);
-            //brush = new SolidBrush(DopColor);
-            g.fillOval(startPosX + 93, startPosY - 25, 14, 28);
-            g.fillOval(startPosX + 93, startPosY + 25, 14, 28);
+        if(camouflage){
+            cannonsAndBombs.drawCannonsAndBombs(g, startPosX, startPosY, Color.RED);
         }
     }
 }
