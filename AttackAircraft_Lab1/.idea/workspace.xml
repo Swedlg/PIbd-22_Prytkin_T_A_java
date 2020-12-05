@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1dc69a68-2c1c-4886-b2fb-64036157e636" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/FlyingTransport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/ICannonsAndBombs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/ITransport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/Plane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/TypeOfCannonsAndBombs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/TypeOfCannonsAndBombs1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/TypeOfCannonsAndBombs2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/TypeOfCannonsAndBombs3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/AttackAircraft$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/AttackAircraft$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/AttackAircraft.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/AttackAircraft.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/CountOfCannonsAndBombs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/CountOfCannonsAndBombs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/MyPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/MyPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/AttackAircraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/AttackAircraft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/CannonsAndBombs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/MyPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MyPanel.java" afterDir="false" />
-    </list>
+    <list default="true" id="1dc69a68-2c1c-4886-b2fb-64036157e636" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
