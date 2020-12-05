@@ -2,10 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dc69a68-2c1c-4886-b2fb-64036157e636" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/CountOfCannonsAndBombs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/FlyingTransport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/ICannonsAndBombs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/ITransport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Plane.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/TypeOfCannonsAndBombs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/TypeOfCannonsAndBombs1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/TypeOfCannonsAndBombs2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/TypeOfCannonsAndBombs3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/AttackAircraft$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/AttackAircraft$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/AttackAircraft.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/AttackAircraft.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/CountOfCannonsAndBombs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/CountOfCannonsAndBombs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/MyPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/MyPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/AttackAircraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/AttackAircraft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/CannonsAndBombs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/CannonsAndBombs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/CannonsAndBombs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/MyPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MyPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +32,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
+        <option value="Interface" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -81,6 +96,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="765" y="257" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1603198632042" />
+    <state x="721" y="371" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog" timestamp="1607147217699">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="721" y="371" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1607147217699" />
     <state x="315" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603200123760">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -93,21 +112,21 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="296" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1603191132521" />
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1603204946870">
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1607148824750">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1603204946870" />
-    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1603204946869">
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1607148824750" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1607148824750">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1603204946869" />
-    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1603204946869">
+    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1607148824750" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1607148824750">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1603204946869" />
-    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1603204946870">
+    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1607148824750" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1607148824750">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1603204946870" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1607148824750" />
   </component>
 </project>

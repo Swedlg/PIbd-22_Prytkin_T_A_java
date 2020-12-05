@@ -22,13 +22,19 @@ public class Main {
     //Набор строк для JComboBox
     private String[] jComboBoxVars = {"Две пушки и бомбы", "Четыре пушки и бомбы", "Шесть пушек и бомб"};
 
-    //Самолет
-    private AttackAircraft attackAircraft;
+    //Набор строк для JComboBox
+    private String[] jComboBoxFormsOfCannonsAndBombs = {"Первый тип рокет и бомб", "Второй тип рокет и бомб", "Третий тип рокет и бомб"};
 
-    Random rnd = new Random();
+    //Самолет
+    private Plane plane;
+
+    private Random rnd = new Random();
 
     //Количество пушек и бомб
-    private int countOfCannonsAndBombs = 2;
+    private CountOfCannonsAndBombs countOfCannonsAndBombs = CountOfCannonsAndBombs.getCountOfCannonsAbdBox(2);
+
+    //Форма ракет и бомб
+    private TypeOfCannonsAndBombs typeOfCannonsAndBombs = TypeOfCannonsAndBombs.getTypeOfCannonsAndBombs(1);
 
     public Main() throws IOException {
         initialize();
@@ -59,9 +65,9 @@ public class Main {
         //Панель для отрисовки самолета
         panel = new MyPanel();
         panel.setBounds(10, 11, 1032, 475);
-        attackAircraft = new AttackAircraft(rnd.nextInt(500) + 1000, rnd.nextInt(1000) + 2000, Color.BLUE, Color.RED, Color.GREEN, Color.YELLOW, true, true, true, true, true, countOfCannonsAndBombs);
-        panel.setAttackAircraft(attackAircraft);
-        attackAircraft.SetPosition(150+(int)(Math.random()*50), 150+(int)(Math.random()*50), panel.getWidth(), panel.getHeight());
+        plane = new AttackAircraft(rnd.nextInt(500) + 1000, rnd.nextInt(1000) + 2000, Color.BLUE, Color.RED, Color.GREEN, Color.YELLOW, true, true, true, true, true, countOfCannonsAndBombs, typeOfCannonsAndBombs);
+        panel.setPlane(plane);
+        plane.setPosition(150+(int)(Math.random()*50), 150+(int)(Math.random()*50), panel.getWidth(), panel.getHeight());
         panel.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
         frame.getContentPane().add(panel);
 
@@ -69,9 +75,9 @@ public class Main {
         JButton button_CreateAttackAircraft = new JButton("Create Attack Aircraft");
         button_CreateAttackAircraft.addActionListener(e -> {
             System.out.println("Создается новый штурмовик.");
-            attackAircraft = new AttackAircraft(rnd.nextInt(500) + 1000, rnd.nextInt(1000) + 2000, Color.BLUE, Color.RED, Color.GREEN, Color.YELLOW, rnd.nextBoolean(), rnd.nextBoolean(), rnd.nextBoolean(), true, true, countOfCannonsAndBombs);
-            panel.setAttackAircraft(attackAircraft);
-            attackAircraft.SetPosition(150+(int)(Math.random()*50), 150+(int)(Math.random()*50), panel.getWidth(), panel.getHeight());
+            plane = new AttackAircraft(rnd.nextInt(500) + 1000, rnd.nextInt(1000) + 2000, Color.BLUE, Color.RED, Color.GREEN, Color.YELLOW, rnd.nextBoolean(), rnd.nextBoolean(), rnd.nextBoolean(), true, true, countOfCannonsAndBombs, typeOfCannonsAndBombs);
+            panel.setPlane(plane);
+            plane.setPosition(150+(int)(Math.random()*50), 150+(int)(Math.random()*50), panel.getWidth(), panel.getHeight());
             frame.repaint();
         });
         button_CreateAttackAircraft.setBounds(10, 497, 210, 131);
@@ -82,10 +88,9 @@ public class Main {
         JButton button_CreatePlane = new JButton("Create Plane");
         button_CreatePlane.addActionListener(e -> {
             System.out.println("Создается новый пассажирский самолет.");
-            countOfCannonsAndBombs = 0;
-            attackAircraft = new AttackAircraft(rnd.nextInt(500) + 1000, rnd.nextInt(1000) + 2000, Color.BLUE, Color.RED, Color.GREEN, Color.YELLOW, rnd.nextBoolean(), rnd.nextBoolean(), rnd.nextBoolean(), false, false, countOfCannonsAndBombs);
-            panel.setAttackAircraft(attackAircraft);
-            attackAircraft.SetPosition(150+(int)(Math.random()*50), 150+(int)(Math.random()*50), panel.getWidth(), panel.getHeight());
+            plane = new Plane(rnd.nextInt(500) + 1000, rnd.nextInt(1000) + 2000, Color.YELLOW, Color.GREEN, rnd.nextBoolean(), rnd.nextBoolean(), rnd.nextBoolean(), 200, 100);
+            panel.setPlane(plane);
+            plane.setPosition(150+(int)(Math.random()*50), 150+(int)(Math.random()*50), panel.getWidth(), panel.getHeight());
             frame.repaint();
         });
         button_CreatePlane.setBounds(230, 497, 210, 131);
@@ -95,7 +100,7 @@ public class Main {
         //Кнопка для передвижения самолета вправо
         JButton button_Right = new JButton(new ImageIcon(ImageIO.read(new File("bRight.png"))));
         button_Right.addActionListener(e -> {
-            attackAircraft.MoveTransport(Directions.Right);
+            plane.moveTransport(Directions.Right);
             frame.repaint();
         });
         button_Right.setBounds(982, 568, 60, 60);
@@ -105,7 +110,7 @@ public class Main {
         //Кнопка для передвижения самолета вниз
         JButton button_Down = new JButton(new ImageIcon(ImageIO.read(new File("bDown.png"))));
         button_Down.addActionListener(e -> {
-            attackAircraft.MoveTransport(Directions.Down);
+            plane.moveTransport(Directions.Down);
             frame.repaint();
         });
         button_Down.setBounds(912, 568, 60, 60);
@@ -115,7 +120,7 @@ public class Main {
         //Кнопка для передвижения самолета влево
         JButton button_Left = new JButton(new ImageIcon(ImageIO.read(new File("bLeft.png"))));
         button_Left.addActionListener(e -> {
-            attackAircraft.MoveTransport(Directions.Left);
+            plane.moveTransport(Directions.Left);
             frame.repaint();
         });
         button_Left.setBounds(842, 568, 60, 60);
@@ -125,7 +130,7 @@ public class Main {
         //Кнопка для передвижения самолета вверх
         JButton button_Up = new JButton(new ImageIcon(ImageIO.read(new File("bUp.png"))));
         button_Up.addActionListener(arg0 -> {
-            attackAircraft.MoveTransport(Directions.Up);
+            plane.moveTransport(Directions.Up);
             frame.repaint();
         });
         button_Up.setBounds(912, 497, 60, 60);
@@ -136,17 +141,42 @@ public class Main {
         JComboBox<String> comboBox = new JComboBox<>(jComboBoxVars);
         comboBox.addActionListener(e -> {
             if (Objects.equals(comboBox.getSelectedItem(), "Две пушки и бомбы")) {
-                countOfCannonsAndBombs = 2;
+                countOfCannonsAndBombs = CountOfCannonsAndBombs.getCountOfCannonsAbdBox(2);
             } else if (Objects.equals(comboBox.getSelectedItem(), "Четыре пушки и бомбы")) {
-                countOfCannonsAndBombs = 4;
+                countOfCannonsAndBombs = CountOfCannonsAndBombs.getCountOfCannonsAbdBox(4);
             } else if (comboBox.getSelectedItem().equals("Шесть пушек и бомб")) {
-                countOfCannonsAndBombs = 6;
+                countOfCannonsAndBombs = CountOfCannonsAndBombs.getCountOfCannonsAbdBox(6);
             }
-            attackAircraft.setCountOfCannonsAndBombs(countOfCannonsAndBombs);
+
+            if(plane instanceof AttackAircraft){
+                ((AttackAircraft)plane).setCountOfCannonsAndBombs(countOfCannonsAndBombs, typeOfCannonsAndBombs);
+            }
+
             frame.repaint();
         });
         comboBox.setBounds(450, 497, 175, 39);
         comboBox.setFocusable(false);
         frame.getContentPane().add(comboBox);
+
+        //Селектор выбора форм ракет и бомб
+        JComboBox<String> comboBoxFormsOfCannons = new JComboBox<>(jComboBoxFormsOfCannonsAndBombs);
+        comboBoxFormsOfCannons.addActionListener(e -> {
+            if (Objects.equals(comboBoxFormsOfCannons.getSelectedItem(), "Первый тип рокет и бомб")) {
+                typeOfCannonsAndBombs = TypeOfCannonsAndBombs.getTypeOfCannonsAndBombs(1);
+            } else if (Objects.equals(comboBoxFormsOfCannons.getSelectedItem(), "Второй тип рокет и бомб")) {
+                typeOfCannonsAndBombs = TypeOfCannonsAndBombs.getTypeOfCannonsAndBombs(2);
+            } else if (Objects.equals(comboBoxFormsOfCannons.getSelectedItem(), "Третий тип рокет и бомб")) {
+                typeOfCannonsAndBombs = TypeOfCannonsAndBombs.getTypeOfCannonsAndBombs(3);
+            }
+
+            if(plane instanceof AttackAircraft){
+                ((AttackAircraft)plane).setCountOfCannonsAndBombs(countOfCannonsAndBombs, typeOfCannonsAndBombs);
+            }
+
+            frame.repaint();
+        });
+        comboBoxFormsOfCannons.setBounds(450, 543, 175, 39);
+        comboBoxFormsOfCannons.setFocusable(false);
+        frame.getContentPane().add(comboBoxFormsOfCannons);
     }
 }

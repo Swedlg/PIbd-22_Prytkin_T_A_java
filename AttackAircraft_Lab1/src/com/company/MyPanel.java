@@ -6,14 +6,14 @@ import java.awt.*;
 public class MyPanel extends JPanel {
 
     //Экземпляр самолета
-    private AttackAircraft attackAircraft;
+    private Plane plane;
 
     /**
      * Установить экземпляр класса AttackAircraft
-     * @param attackAircraft Экземпляр самолета
+     * @param plane Экземпляр самолета
      */
-    public void setAttackAircraft(AttackAircraft attackAircraft) {
-        this.attackAircraft = attackAircraft;
+    public void setPlane(Plane plane) {
+        this.plane = plane;
     }
 
     /**
@@ -21,10 +21,15 @@ public class MyPanel extends JPanel {
      * @param g Полотно JPanel
      */
     public void paint(Graphics g) {
-        if (attackAircraft != null) {
+        if (plane != null) {
             Graphics2D g2 = (Graphics2D) g;
             g2.drawImage((new ImageIcon("sky-2868089_1920.jpg")).getImage(), 0, 0,this);
-            attackAircraft.drawTransport(g);
+
+            if(plane instanceof AttackAircraft){
+                ((AttackAircraft) plane).drawAttackAircraft(g);
+            } else{
+                plane.drawTransport(g);
+            }
         }
     }
 }
