@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dc69a68-2c1c-4886-b2fb-64036157e636" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/CountOfCannonsAndBombs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/AttackAircraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/AttackAircraft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/CannonsAndBombs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/CannonsAndBombs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>

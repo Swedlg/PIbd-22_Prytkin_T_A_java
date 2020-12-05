@@ -49,7 +49,7 @@ public class AttackAircraft  {
     //Количесвто ракет и бомб
     public int countOfCannonsAndBombs;
 
-    //Экземпляр класс ракет и бомб
+    //Экземпляр класса ракет и бомб
     CannonsAndBombs cannonsAndBombs;
 
     public AttackAircraft(int maxSpeed, float weight, Color mainColor, Color dopColor, Color dopColor2, Color dopColor3, boolean propeller, boolean chassis, boolean antenna, boolean rockets, boolean bombs, int countOfCannonsAndBombs)
