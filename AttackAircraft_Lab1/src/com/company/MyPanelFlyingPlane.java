@@ -3,7 +3,7 @@ package com.company;
 import javax.swing.*;
 import java.awt.*;
 
-public class MyPanel extends JPanel {
+public class MyPanelFlyingPlane extends JPanel {
 
     //Экземпляр самолета
     private Plane plane;

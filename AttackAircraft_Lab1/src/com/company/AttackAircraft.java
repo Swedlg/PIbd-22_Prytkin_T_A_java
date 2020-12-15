@@ -74,7 +74,6 @@ public class AttackAircraft extends Plane {
             this.countOfCannonsAndBombs = countOfCannonsAndBombs;
             this.typeOfCannonsAndBombs = formOfCannonsAndBombs;
 
-
             switch(typeOfCannonsAndBombs) {
 
                 case First:
