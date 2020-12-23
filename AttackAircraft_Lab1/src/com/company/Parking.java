@@ -1,10 +1,14 @@
 package com.company;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Parking<T extends ITransport, ICannonsAndBombs> {
 
-    private final Object[] places;
+    private final List<T> places;
+
+    private final int countOfPlaces;
 
     private final int pictureWidth;
 
@@ -20,11 +24,12 @@ public class Parking<T extends ITransport, ICannonsAndBombs> {
      * @param pictureHeight Высота картинки
      */
     public Parking(int pictureWidth, int pictureHeight) {
-        int width = pictureWidth / placeSizeWidth;
-        int height = pictureHeight / placeSizeHeight;
-        places = new Object[width * height];
         this.pictureWidth = pictureWidth;
         this.pictureHeight = pictureHeight;
+        int width = pictureWidth / placeSizeWidth;
+        int height = pictureHeight / placeSizeHeight;
+        countOfPlaces = width*height;
+        places = new ArrayList<>();
     }
 
     /**
@@ -33,14 +38,10 @@ public class Parking<T extends ITransport, ICannonsAndBombs> {
      * @return Получилось ли добавить
      */
     public boolean add(T plane) {
-        for (int i = 0; i < places.length; i++)
+        if (places.size() < countOfPlaces)
         {
-            if (places[i] == null)
-            {
-                places[i] = plane;
-                plane.setPosition(10 + ((i / 2) * 250), 100 + ((i % 2) * 230), pictureWidth, pictureHeight);
-                return true;
-            }
+            places.add(plane);
+            return true;
         }
         return false;
     }
@@ -52,17 +53,12 @@ public class Parking<T extends ITransport, ICannonsAndBombs> {
      */
     public T remove(int index)
     {
-
-        if (places.length > index && index >= 0 && places[index] != null)
+        if (index < countOfPlaces && index >= 0 && places.get(index) != null)
         {
-            Object plane = places[index];
-
-            System.out.println(plane.getClass().getName());
-            places[index] = null;
-
-            return ((T) plane);
+            T plane = places.get(index);
+            places.remove(index);
+            return plane;
         }
-
         return null;
     }
 
@@ -104,11 +100,18 @@ public class Parking<T extends ITransport, ICannonsAndBombs> {
     public void draw(Graphics g)
     {
         drawMarking(g);
-        for (Object place : places) {
-            if (place != null) {
-                ((T) place).drawTransport(g);
+
+
+        for (int i = 0; i < places.size(); i++) {
+            if (places.get(i) != null) {
+                T plane = (T) places.get(i);
+                plane.setPosition( (i / 2) * placeSizeWidth + 15, (i % 2) * placeSizeHeight + 105, pictureWidth, pictureHeight);
+                plane.drawTransport(g);
+            } else {
+                return;
             }
         }
+
     }
 
     /**
@@ -130,5 +133,12 @@ public class Parking<T extends ITransport, ICannonsAndBombs> {
             }
             g.drawLine( i * placeSizeWidth, 0, i * placeSizeWidth, (pictureHeight / placeSizeHeight) * placeSizeHeight);
         }
+    }
+
+    public T get(int index) {
+        if (index >= 0 && index < places.size()) {
+            return places.get(index);
+        }
+        return null;
     }
 }
