@@ -6,13 +6,13 @@ import java.awt.*;
 public class MyPanelFlyingPlane extends JPanel {
 
     //Экземпляр самолета
-    private Plane plane;
+    private ITransport plane;
 
     /**
      * Установить экземпляр класса AttackAircraft
      * @param plane Экземпляр самолета
      */
-    public void setPlane(Plane plane) {
+    public void setPlane(ITransport plane) {
         this.plane = plane;
     }
 
@@ -25,9 +25,7 @@ public class MyPanelFlyingPlane extends JPanel {
             Graphics2D g2 = (Graphics2D) g;
             g2.drawImage((new ImageIcon("sky-2868089_1920.jpg")).getImage(), 0, 0,this);
 
-            if(plane instanceof AttackAircraft){
-                ((AttackAircraft) plane).drawAttackAircraft(g);
-            } else{
+            if(plane instanceof Plane){
                 plane.drawTransport(g);
             }
         }

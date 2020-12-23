@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dc69a68-2c1c-4886-b2fb-64036157e636" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/FrameAttackAircraft.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/FrameParking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/MyPanelParking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/Parking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/AttackAircraft.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/AttackAircraft.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AttackAircraft_Lab1/com/company/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/AttackAircraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/AttackAircraft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/MyPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MyPanelFlyingPlane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/FrameAttackAircraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/FrameAttackAircraft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/FrameParking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/FrameParking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/MyPanelFlyingPlane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MyPanelFlyingPlane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Parking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Parking.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,29 +96,29 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="554" y="135" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1603203521081" />
-    <state x="740" y="296" key="FileChooserDialogImpl" timestamp="1603191132521">
+    <state x="740" y="296" key="FileChooserDialogImpl" timestamp="1608701333677">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="740" y="296" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1603191132521" />
-    <state width="1877" height="292" key="GridCell.Tab.0.bottom" timestamp="1608004187852">
+    <state x="740" y="296" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1608701333677" />
+    <state width="1877" height="292" key="GridCell.Tab.0.bottom" timestamp="1608702749164">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1608004187852" />
-    <state width="1877" height="292" key="GridCell.Tab.0.center" timestamp="1608004187852">
+    <state width="1877" height="292" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1608702749164" />
+    <state width="1877" height="292" key="GridCell.Tab.0.center" timestamp="1608702749164">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1608004187852" />
-    <state width="1877" height="292" key="GridCell.Tab.0.left" timestamp="1608004187852">
+    <state width="1877" height="292" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1608702749164" />
+    <state width="1877" height="292" key="GridCell.Tab.0.left" timestamp="1608702749164">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1608004187852" />
-    <state width="1877" height="292" key="GridCell.Tab.0.right" timestamp="1608004187852">
+    <state width="1877" height="292" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1608702749164" />
+    <state width="1877" height="292" key="GridCell.Tab.0.right" timestamp="1608702749164">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1608004187852" />
-    <state x="656" y="365" key="com.intellij.ide.util.TipDialog" timestamp="1607964729729">
+    <state width="1877" height="292" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1608702749164" />
+    <state x="656" y="365" key="com.intellij.ide.util.TipDialog" timestamp="1608110826313">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="656" y="365" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1607964729729" />
+    <state x="656" y="365" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1608110826313" />
   </component>
 </project>

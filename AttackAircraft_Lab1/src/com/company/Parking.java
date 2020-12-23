@@ -53,16 +53,49 @@ public class Parking<T extends ITransport, ICannonsAndBombs> {
     public T remove(int index)
     {
 
-        if (places.length > index && index > 0 && places[index] != null)
+        if (places.length > index && index >= 0 && places[index] != null)
         {
-            Object returnResult = places[index];
+            Object plane = places[index];
+
+            System.out.println(plane.getClass().getName());
             places[index] = null;
 
-            return ((T) returnResult);
+            return ((T) plane);
         }
 
         return null;
     }
+
+    /**
+     * Больше или равно?
+     * @param countForCompare число
+     * @return результат проверки
+     */
+    public boolean MoreOrEquals(int countForCompare) {
+        int count = 0;
+        for (Object place : places) {
+            if (place != null) {
+                count++;
+            }
+        }
+        return (countForCompare >= count);
+    }
+
+    /**
+     * Меньше или равно?
+     * @param countForCompare число
+     * @return результат проверки
+     */
+    public boolean LessOrEquals(int countForCompare) {
+        int count = 0;
+        for (Object place : places) {
+            if (place != null) {
+                count++;
+            }
+        }
+        return (countForCompare <= count);
+    }
+
 
     /**
      * Отрисовка всех самолетов на парковке

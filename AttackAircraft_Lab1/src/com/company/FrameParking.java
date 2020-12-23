@@ -9,15 +9,26 @@ import java.io.IOException;
 
 public class FrameParking {
 
+    //Экземпляр парковки
     private Parking parking;
 
+    //Главное окно
     public JFrame frame;
+
+    //Поле для ввода индекса
     private JTextField textFieldOfIndex;
 
+    /**
+     * Конструктор парковки
+     */
     public FrameParking() {
         initialize();
     }
 
+    /**
+     * Отрисовка
+     * @param g Полотно
+     */
     public void draw(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         if (parking != null) {
@@ -26,7 +37,7 @@ public class FrameParking {
     }
 
     /**
-     * Initialize the contents of the frame.
+     * Инициализация окна
      */
     private void initialize() {
         frame = new JFrame();
@@ -47,7 +58,7 @@ public class FrameParking {
             JColorChooser colorDialog = new JColorChooser();
             JOptionPane.showMessageDialog(frame, colorDialog);
             if (colorDialog.getColor() != null) {
-                Plane plane = new Plane(1250, 2500, Color.YELLOW, Color.GREEN, true, true, true, 200, 100);
+                Plane plane = new Plane(1250, 2500, colorDialog.getColor(), Color.GREEN, true, true, true, 200, 100);
                 if (parking.add(plane)) {
                     frame.repaint();
                 } else {
@@ -68,7 +79,7 @@ public class FrameParking {
                 JColorChooser otherColorDialog = new JColorChooser();
                 JOptionPane.showMessageDialog(frame, otherColorDialog);
                 if (otherColorDialog.getColor() != null) {
-                    AttackAircraft attackAircraft = new AttackAircraft(1250, 2500, Color.BLUE, Color.RED, Color.GREEN, Color.YELLOW, true, true, true, true, true, CountOfCannonsAndBombs.getCountOfCannonsAbdBox(6), TypeOfCannonsAndBombs.getTypeOfCannonsAndBombs(1));
+                    AttackAircraft attackAircraft = new AttackAircraft(1250, 2500, colorDialog.getColor(), Color.RED, Color.GREEN, otherColorDialog.getColor(), true, true, true, true, true, CountOfCannonsAndBombs.getCountOfCannonsAbdBox(6), TypeOfCannonsAndBombs.getTypeOfCannonsAndBombs(1));
                     if (parking.add(attackAircraft)) {
                         frame.repaint();
                     } else {
@@ -96,14 +107,16 @@ public class FrameParking {
             if (!textFieldOfIndex.getText().equals("")) {
                 try {
                     ITransport plane = parking.remove(Integer.parseInt(textFieldOfIndex.getText()));
+
                     if (plane != null) {
                         FrameAttackAircraft frameAttackAircraft = new FrameAttackAircraft();
-                        frameAttackAircraft.setPlane();
+                        frameAttackAircraft.setPlane(plane);
+                        frameAttackAircraft.frame.setVisible(true);
                         frame.repaint();
                     } else {
                         JOptionPane.showMessageDialog(frame, "Самолета на таком месте нет");
                     }
-                } catch (NumberFormatException | IOException ex) {
+                } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(frame, "Неверно введены данные по индексу");
                 }
             }
