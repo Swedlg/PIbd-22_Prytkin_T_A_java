@@ -74,7 +74,6 @@ public class AttackAircraft extends Plane {
             this.countOfCannonsAndBombs = countOfCannonsAndBombs;
             this.typeOfCannonsAndBombs = formOfCannonsAndBombs;
 
-
             switch(typeOfCannonsAndBombs) {
 
                 case First:
@@ -99,7 +98,7 @@ public class AttackAircraft extends Plane {
      * Метод отрисовка самолета
      * @param g Полотно отрисовки
      */
-    public void drawAttackAircraft(Graphics g) {
+    public void drawTransport(Graphics g) {
 
         Graphics2D g2 = (Graphics2D) g;
         g.setColor(colorOfCamouflage);
