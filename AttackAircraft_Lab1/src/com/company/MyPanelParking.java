@@ -5,15 +5,22 @@ import java.awt.*;
 
 public class MyPanelParking extends JPanel {
 
-    private final Parking<ICannonsAndBombs, ITransport> parking;
+    private ParkingCollection parkingCollection;
+    private String currentParking = null;
 
-    public MyPanelParking(Parking<ICannonsAndBombs, ITransport> parking) {
-        this.parking = parking;
+    public MyPanelParking(ParkingCollection parkingCollection) {
+        this.parkingCollection = parkingCollection;
     }
 
     public void paint(Graphics g) {
-        if (parking != null) {
-            parking.draw(g);
+        if (currentParking != null) {
+            if (parkingCollection != null) {
+                parkingCollection.get(currentParking).draw(g);
+            }
         }
+    }
+
+    public void setParking(String currentParking) {
+        this.currentParking = currentParking;
     }
 }
