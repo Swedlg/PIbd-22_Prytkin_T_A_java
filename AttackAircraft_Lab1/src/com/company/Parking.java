@@ -2,7 +2,7 @@ package com.company;
 
 import java.awt.*;
 
-public class Parking<T extends ITransport, ICannonsAndBombs> {
+public class Parking<Q extends ICannonsAndBombs, T extends ITransport> {
 
     private final Object[] places;
 

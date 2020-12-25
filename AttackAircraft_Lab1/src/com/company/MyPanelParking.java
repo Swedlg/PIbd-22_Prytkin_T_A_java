@@ -5,9 +5,9 @@ import java.awt.*;
 
 public class MyPanelParking extends JPanel {
 
-    private final Parking<ITransport, ICannonsAndBombs> parking;
+    private final Parking<ICannonsAndBombs, ITransport> parking;
 
-    public MyPanelParking(Parking<ITransport, ICannonsAndBombs> parking) {
+    public MyPanelParking(Parking<ICannonsAndBombs, ITransport> parking) {
         this.parking = parking;
     }
 

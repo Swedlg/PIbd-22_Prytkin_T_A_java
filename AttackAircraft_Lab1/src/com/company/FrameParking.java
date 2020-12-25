@@ -3,9 +3,6 @@ package com.company;
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.IOException;
 
 public class FrameParking {
 
@@ -62,7 +59,7 @@ public class FrameParking {
                 if (parking.add(plane)) {
                     frame.repaint();
                 } else {
-                    JOptionPane.showMessageDialog(frame, "Доки переполнены");
+                    JOptionPane.showMessageDialog(frame, "Парковка переполнены");
                 }
             }
 
@@ -83,7 +80,7 @@ public class FrameParking {
                     if (parking.add(attackAircraft)) {
                         frame.repaint();
                     } else {
-                        JOptionPane.showMessageDialog(frame, "Доки переполнены");
+                        JOptionPane.showMessageDialog(frame, "Парковка переполнена");
                     }
                 }
             }
