@@ -92,7 +92,6 @@ public class Parking<Q extends ICannonsAndBombs, T extends ITransport> {
         return (countForCompare <= count);
     }
 
-
     /**
      * Отрисовка всех самолетов на парковке
      * @param g Полотно
